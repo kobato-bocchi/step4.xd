@@ -1,0 +1,362 @@
+@charset "UTF-8";
+/* ================================
+reset.css
+================================ */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #745A4C;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.section {
+  padding: 110px 0;
+}
+@media (max-width: 767px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+}
+
+.inner {
+  width: 1130px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) and (max-width: 1130px) {
+  .inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* ================================
+header
+================================ */
+/* ================================
+main-visual
+================================ */
+.main-visual {
+  background: url(../img/mainimage.png) no-repeat center center/cover;
+  padding-top: 56.09%;
+  position: relative;
+}
+
+.main-visual__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main-visual__title {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.main-visual__subtitle {
+  font-size: 29px;
+  color: #fff;
+}
+
+.main-visual__logo {
+  padding-top: 25px;
+}
+
+/* ================================
+news section
+================================ */
+.news {
+  background: url(../img/bg.png) no-repeat center center/cover;
+}
+
+.news__inner {
+  background: #fff;
+  padding: 41px 51px;
+  height: 357px;
+}
+
+.news__head {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.news__items {
+  float: left;
+  padding-top: 5px;
+}
+
+.news__item {
+  padding: 10px 0;
+}
+
+.news__title a {
+  text-decoration: none;
+}
+
+.news__more {
+  float: right;
+  font-weight: 700;
+  border-bottom: 1px solid #603D79;
+  padding: 168px 0 7px;
+  width: 140px;
+}
+.news__more a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* ================================
+content section
+================================ */
+.content__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content__item {
+  width: calc(25% - 30px * 3 / 4);
+}
+@media (min-width: 1130px) {
+  .content__item:not(:nth-child(4n+1)) {
+    margin-left: 30px;
+  }
+  .content__item:nth-child(n+5) {
+    margin-top: 30px;
+  }
+}
+
+.card__img img {
+  width: 100%;
+}
+
+/* ================================
+concept section
+================================ */
+.concept {
+  background: #E8E8E2;
+}
+
+.concept__head {
+  font-size: 35px;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.concept__head::before, .concept__head::after {
+  content: "";
+  height: 1px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: #745A4C;
+}
+
+span {
+  padding: 0 30px 25px;
+}
+
+.ul, li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.ul:nth-child(even), li:nth-child(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+li {
+  height: 249px;
+  padding-bottom: 21px;
+}
+
+.concept__text-even {
+  height: 179px;
+  margin: 35px 0 0 64px;
+}
+
+.concept__text-odd {
+  height: 179px;
+  margin: 35px 64px 0 0;
+}
+
+.concept__subtitle {
+  font-size: 22px;
+  font-weight: 700;
+  padding-bottom: 21px;
+}
+
+.concept__lead {
+  color: #707070;
+}
+
+/* ================================
+contact
+================================ */
+.contact {
+  background-color: #DEDCD4;
+}
+
+.contact__inner {
+  height: 108px;
+}
+
+.contact__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact__item {
+  width: calc(33.3% - 38px * 2 / 3);
+  text-align: center;
+}
+.contact__item:not(:nth-child(3n+1)) {
+  margin-left: 38px;
+}
+
+.contact__address {
+  text-align: left;
+  width: 350px;
+}
+
+.contact__subtitle {
+  font-size: 21px;
+  padding-bottom: 20px;
+}
+
+.contact__logo {
+  width: 290px;
+}
+.contact__subtext {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.contact__button {
+  position: relative;
+  font-size: 22px;
+}
+.contact__button::before {
+  content: "";
+  width: 9px;
+  height: 12px;
+  background: url(../img/icons8-phone_time.png) no-repeat center center/contain;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.contact__button a {
+  display: inline-block;
+  font-size: 21px;
+  text-decoration: none;
+  width: 400px;
+  height: 70px;
+  max-width: 100%;
+  line-height: 70px;
+  background-color: #F4F4F4;
+  color: #745A4C;
+  outline: none;
+  font-weight: 700;
+}
+
+/* ================================
+footer
+================================ */
+.footer {
+  height: 372px;
+  background-color: #745A4C;
+  color: #ffffff;
+}
+
+.footer__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 0 59px;
+}
+
+.footer__item {
+  width: calc(20% - 55px * 4 / 5);
+  margin-left: 55px;
+}
+.footer__sns-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.footer__copylight {
+  text-align: center;
+  padding-top: 57px;
+}
