@@ -1,7 +1,7 @@
 $color-text:#745A4C;
 $color-main:#745A4C;
 
-$layout-width-inner: 1130px;
+$layout-width-inner: 800px;
 
 //ブレイクポイント
 $breakpoints: (
@@ -92,10 +92,6 @@ a {
     }
 }
 
-@include mq('pc') {
-    width: 1920px;
-}
-
 /* ================================
 header
 ================================ */
@@ -109,7 +105,7 @@ main-visual
     padding-top: 56.09%;
     position: relative;
     object-fit: cover;
-    min-height: 1077px;
+    min-height: 900px;
 
     @include mq('sp') {
         min-height: 811px;
@@ -134,12 +130,16 @@ main-visual
 
 }
 .main-visual__subtitle {
-    font-size: 29px;
+    font-size: 24px;
     color: #fff;
   
 }
 .main-visual__logo {
-    padding-top: 25px;
+    padding-top: 20px;
+
+    img {
+        width: 20%;
+    }
 }
 
 /* ================================
@@ -147,25 +147,28 @@ news section
 ================================ */
 .news {
     background: url(../img/bg.png) no-repeat center center / cover;
+    height: 450px;
+    padding-block-start: 80px;
 }
 .news__inner {
     background: #fff;
-    padding: 41px 51px;
-    height: 357px;
+    padding: 15px 51px;
+    height: 289px;
 }
 .news__head {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
+    padding-top: 20px;
 }
 .news__items {
     float: left;
-    padding-top: 5px;
+    padding-top: 8px;
 }
 .news__item {
-    padding: 10px 0;
+    padding: 7px 0;
 }
 .news__meta {
-
+    font-size: 12px;
 }
 .news__date {
 
@@ -179,7 +182,7 @@ news section
     float: right;
     font-weight: 700;
     border-bottom: 1px solid #603D79;
-    padding: 168px 0 7px;
+    padding: 118px 0 7px;
     width: 140px;
     a {
         text-decoration: none;
@@ -227,7 +230,7 @@ concept section
 
 }
 .concept__head {
-    font-size: 35px;
+    font-size: 29px;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -290,7 +293,7 @@ contact
     text-align: center;
 
     &:not(:nth-child(3n + 1)) {
-        margin-left: 38px;
+        margin-left: 20px;
     }
 
 }
@@ -299,38 +302,37 @@ contact
     width: 350px;
 }
 .contact__subtitle {
-    font-size: 21px;
-    padding-bottom: 20px;
+    font-size: 11px;
+    padding-bottom: 10px;
 }
 .contact__logo {
-    width: 290px;
 
     img {
-        
+        width: 60%;
     }
 }
 .contact__subtext {
-    font-size: 19px;
+    font-size: 11px;
     font-weight: 700;
 }
 .contact__button {
     position: relative;
-    font-size: 22px;
-
+    font-size: 21px;
+    
     &::before {
         content: "";
-        width: 9px;
-        height: 12px;
+        width: 15px;
+        height: 15px;
         background: url(../img/icons8-phone_time.png) no-repeat center center / contain;
         position: absolute;
-        left: 0;
+        left: 15px;
         top: 50%;
         transform: translateY(-50%);
         
     }
     a {
         display: inline-block;
-        font-size: 21px;
+        font-size: 15px;
         text-decoration: none;
         width: 400px;
         height: 70px;
@@ -347,33 +349,30 @@ contact
 footer
 ================================ */
 .footer {
-    height: 372px;
+    height: 250px;
+    padding-block-start: 50px;
     background-color: $color-main;
     color: #ffffff;
 }
 .footer__inner {
-
+    
 }
 .footer__items {
     display: flex;
-    padding: 0 0 59px;
-    // justify-content: space-around;
-    // width: 640px;
-    // align-items: center;
 }
 .footer__item {
     width: calc(20% - 55px * 4 / 5);
-    margin-left: 55px;
-
+    margin-left: 60px;
+    padding-bottom: 20px;
+    
     a {
-
+        text-decoration: none;
+        
     }
 }
 .footer__sns-links {
     display: flex;
     justify-content: space-around;
-    // margin: auto;
-    // align-items: center;
 }
 .footer__sns-link {
     img{
@@ -381,10 +380,11 @@ footer
     }
 
     a {
+        text-decoration: none;
 
     }
 }
 .footer__copylight {
     text-align: center;
-    padding-top: 57px;
+    padding-top: 40px;
 }
