@@ -1,7 +1,7 @@
 $color-text:#745A4C;
 $color-main:#745A4C;
 
-$layout-width-inner: 800px;
+$layout-width-inner: 850px;
 
 //ブレイクポイント
 $breakpoints: (
@@ -16,6 +16,12 @@ $breakpoints: (
     //この中をカスタムできる
     @content;
   }
+}
+
+br-sp {
+    @include mq('sp') {
+        display: none;
+    }
 }
 
 /* ================================
@@ -39,6 +45,10 @@ body{
     line-height: 1.6;
     background-color: #fff;
     color: $color-text;
+
+    @include mq('sp') {
+        font-size: 14px;
+    }
 }
 
 img {
@@ -66,13 +76,17 @@ h6 {
 a {
     color: inherit;
 }
+/* 擬似要素！ */
+a:hover {
+    opacity: 0.7;
+}
 
 .section {
     padding: 110px 0;
 
     @include mq('sp') {
         padding-top: 50px;
-        padding-bottom: 60px;
+        padding-bottom: 50px;
     }
 
 }
@@ -87,6 +101,7 @@ a {
     }
 
     @include mq('sp') {
+        width: 340px;
         padding-left: 16px;
         padding-right: 16px;
     }
@@ -104,8 +119,17 @@ main-visual
     background: url(../img/mainimage.png) no-repeat center center / cover;
     padding-top: 56.09%;
     position: relative;
-    object-fit: cover;
-    min-height: 900px;
+    // object-fit: cover;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5); /*半透明のフィルターをかける*/
+    }
 
     @include mq('sp') {
         min-height: 811px;
@@ -127,18 +151,28 @@ main-visual
     transform: translateY(-50%);
     width: 100%;
     text-align: center;
-
 }
 .main-visual__subtitle {
     font-size: 24px;
     color: #fff;
-  
+
+    @include mq('sp') {
+        font-size: 15px;
+    }
 }
 .main-visual__logo {
     padding-top: 20px;
 
+    @include mq('sp') {
+        padding-top: 10px;
+    }
+
     img {
         width: 20%;
+
+        @include mq('sp') {
+            width: 50%;
+        }
     }
 }
 
@@ -149,11 +183,19 @@ news section
     background: url(../img/bg.png) no-repeat center center / cover;
     height: 450px;
     padding-block-start: 80px;
+
+    @include mq('sp') {
+        height: 510px;
+    }
 }
 .news__inner {
     background: #fff;
     padding: 15px 51px;
     height: 289px;
+
+    @include mq('sp') {
+        height: 350px;
+    }
 }
 .news__head {
     font-size: 30px;
@@ -188,6 +230,10 @@ news section
         text-decoration: none;
         color: #000;
     }
+
+    @include mq('sp') {
+        padding: 5px 0 7px;
+    }
 }
 /* ================================
 content section
@@ -214,6 +260,18 @@ content section
             margin-top: 30px;
         }
     }
+
+    @include mq('sp') {
+        width: calc(50% - 20px * 1 / 2);
+
+        &:not(:nth-child(2n + 1)) {
+            margin-left: 20px;
+        }
+
+        &:nth-child(n + 3) {
+            padding-top: 21px;
+        }
+    }
 }
 .card__img {
     img {
@@ -234,44 +292,87 @@ concept section
     font-weight: 700;
     display: flex;
     align-items: center;
+    padding: 0 30px 25px;
     
     &::before , &::after {
         content: '';
         height: 1px;
         flex-grow: 1;
         background-color: #745A4C;
+
     }
+    
+    @include mq('sp') {
+        font-size: 25px;
+        display: block;
+        text-align: center;
+
+        &::before , &::after {
+            content: none;
+        }
+    }
+
 }
-span {
-    padding: 0 30px 25px;
-}
+
 .ul,li {
     display:flex; //画像とテキストを横並びに
     
     &:nth-child(even) {
         flex-direction: row-reverse;
     }
+    
+    @include mq('sp') {
+        display: block;
+    }
 }
 li {
     height: 249px;
     padding-bottom: 21px;
+    
+    @include mq('sp') {
+        width: 100%;
+        height: 500px;
+        margin: 0 auto;
+        text-align: center;
+        
+        img {
+            width: 70%;
+            padding-bottom: 13px;
+        }
+    }
 }
 .concept__text-even {
     height: 179px;
     margin: 35px 0 0 64px;
+
+    @include mq('sp') {
+        margin: auto;
+    }
 }
 .concept__text-odd {
     height: 179px;
     margin: 35px 64px 0 0;
 
+    @include mq('sp') {
+        margin: auto;
+    }
 }
 .concept__subtitle {
     font-size: 22px;
     font-weight: 700;
     padding-bottom: 21px;
+
+    @include mq('sp') {
+        font-size: 18px;
+        text-align: center;
+    }
 }
 .concept__lead {
     color: #707070;
+
+    @include mq('sp') {
+        text-align: left;
+    }
 }
 
 /* ================================
@@ -283,37 +384,60 @@ contact
 .contact__inner {
     height: 108px;
 
+    @include mq('sp') {
+        height: 300px;
+    }    
 }
 .contact__items {
     display: flex;
     align-items: center;
+    
+    @include mq('sp') {
+        display: block;
+    }
 }
 .contact__item {
     width: calc(33.3% - 38px * 2 / 3);
     text-align: center;
-
+    
     &:not(:nth-child(3n + 1)) {
         margin-left: 20px;
-    }
 
+    }
+    
+    @include mq('sp') {
+        width: 100%;
+    }
+    
 }
 .contact__address {
     text-align: left;
-    width: 350px;
+
+    @include mq('sp') {
+    font-size: 12px;
+    }
 }
 .contact__subtitle {
     font-size: 11px;
     padding-bottom: 10px;
+
+    @include mq('sp') {
+        font-size: 15px;
+    }
 }
 .contact__logo {
 
     img {
-        width: 60%;
+        width: 70%;
     }
 }
 .contact__subtext {
     font-size: 11px;
     font-weight: 700;
+
+    @include mq('sp') {
+        font-size: 18px;
+    }
 }
 .contact__button {
     position: relative;
@@ -328,6 +452,11 @@ contact
         left: 15px;
         top: 50%;
         transform: translateY(-50%);
+
+        @include mq('sp') {
+            width: 80px;
+            height: 25px;
+        }
         
     }
     a {
@@ -342,7 +471,12 @@ contact
         color: $color-text;
         outline: none;
         font-weight: 700;
+
+        @include mq('sp') {
+            width: 250px;
+            padding-left: 34px;
         }
+    }
 
 }
 /* ================================
@@ -353,12 +487,20 @@ footer
     padding-block-start: 50px;
     background-color: $color-main;
     color: #ffffff;
+    
+    @include mq('sp') {
+        height: 280px;
+    }
 }
 .footer__inner {
     
 }
 .footer__items {
     display: flex;
+    
+    @include mq('sp') {
+        flex-wrap: wrap;
+    }
 }
 .footer__item {
     width: calc(20% - 55px * 4 / 5);
@@ -367,7 +509,10 @@ footer
     
     a {
         text-decoration: none;
-        
+    }
+
+    @include mq('sp') {
+
     }
 }
 .footer__sns-links {
