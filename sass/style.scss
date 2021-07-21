@@ -12,18 +12,17 @@ $breakpoints: (
 
 //メディアクエリ
 @mixin mq($breakpoint: sp) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    //この中をカスタムできる
-    @content;
-  }
+    @media #{map-get($breakpoints, $breakpoint)} {
+      //この中をカスタムできる
+      @content;
+    }
 }
 
-br-sp {
+.br-sp {
     @include mq('sp') {
         display: none;
     }
 }
-
 /* ================================
 reset.css
 ================================ */
@@ -45,10 +44,11 @@ body{
     line-height: 1.6;
     background-color: #fff;
     color: $color-text;
-
+    
     @include mq('sp') {
         font-size: 14px;
     }
+    
 }
 
 img {
@@ -83,29 +83,30 @@ a:hover {
 
 .section {
     padding: 110px 0;
-
+    
     @include mq('sp') {
         padding-top: 50px;
         padding-bottom: 50px;
     }
-
+    
 }
 .inner {
     width: $layout-width-inner;
     max-width: 100%;
     margin: 0 auto;
-
+    
     @include mq('tab') {
         padding-left: 24px;
         padding-right: 24px;
     }
-
+    
     @include mq('sp') {
         width: 340px;
         padding-left: 16px;
         padding-right: 16px;
     }
 }
+
 
 /* ================================
 header
@@ -432,7 +433,7 @@ contact
     }
 }
 .contact__subtext {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 700;
 
     @include mq('sp') {

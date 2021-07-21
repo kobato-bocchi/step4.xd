@@ -1,10 +1,4 @@
 @charset "UTF-8";
-@media (max-width: 767px) {
-  br-sp {
-    display: none;
-  }
-}
-
 /* ================================
 reset.css
 ================================ */
@@ -91,6 +85,12 @@ a:hover {
     width: 340px;
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .br-sp {
+    display: none;
   }
 }
 
@@ -449,7 +449,7 @@ contact
 }
 
 .contact__subtext {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
 }
 @media (max-width: 767px) {
